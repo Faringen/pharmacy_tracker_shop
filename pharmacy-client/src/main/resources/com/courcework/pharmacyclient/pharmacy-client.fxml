@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.courcework.pharmacyclient.controller.MainController"
+            stylesheets="@style.css">
+
+    <top>
+        <HBox spacing="10" styleClass="top-bar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <TextField fx:id="searchField"
+                       promptText="Поиск препарата"
+                       onAction="#onSearch"
+                       HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+
+    <left>
+        <ListView fx:id="medicineListView" prefWidth="260" BorderPane.alignment="CENTER"/>
+    </left>
+
+    <center>
+        <VBox spacing="12" styleClass="detail-pane">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+
+            <Label fx:id="medicineNameLabel" styleClass="drug-name"/>
+            <Label fx:id="medicineDescriptionLabel"  styleClass="drug-description" wrapText="true"/>
+
+            <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                <Tab text="Цены">
+                    <VBox spacing="12">
+                        <padding>
+                            <Insets top="12" right="0" bottom="0" left="0"/>
+                        </padding>
+
+                        <TableView fx:id="priceTableView" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="pharmacyColum" text="Аптека" prefWidth="260"/>
+                                <TableColumn fx:id="priceColum" text="Цена" prefWidth="120"/>
+                            </columns>
+                        </TableView>
+
+                        <HBox styleClass="total-box" spacing="10">
+                            <padding>
+                                <Insets top="10" right="12" bottom="10" left="12"/>
+                            </padding>
+                            <Label text="Итого (минимум)" HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="minPriceLabel" styleClass="total-price"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button fx:id="openWebsiteButton" text="Перейти на сайт аптеки" onAction="#onOpenSite" styleClass="site-button"/>
+                        </HBox>
+                    </VBox>
+                </Tab>
+
+                <Tab text="Аналоги">
+                    <ListView fx:id="analogsListView"/>
+                </Tab>
+            </TabPane>
+        </VBox>
+    </center>
+
+</BorderPane>

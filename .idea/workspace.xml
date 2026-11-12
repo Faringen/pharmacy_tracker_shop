@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ac55f55-2cfc-4982-9b91-36d694cb57a1" name="Changes" comment="Add new stuff">
+    <list default="true" id="7ac55f55-2cfc-4982-9b91-36d694cb57a1" name="Changes" comment="Add documentation">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,8 +56,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Faringen/primacy-tracker-shop.git&quot;,
-    &quot;accountId&quot;: &quot;a1fdc769-f9e3-4a5f-872b-1be4e1eb6bd4&quot;
+    &quot;url&quot;: &quot;https://github.com/Faringen/pharmacy_tracker_shop.git&quot;,
+    &quot;accountId&quot;: &quot;087cb5bf-f03b-4c91-b6a0-2d66d135575f&quot;
   }
 }</component>
   <component name="JsbtTreeLayoutManager">
@@ -81,32 +83,35 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Explyt Spring.PharmacyClientApplication.executor": "Run",
-    "Explyt Spring.PharmacyServerApplication.executor": "Run",
-    "JUnit.MedicineServiceTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "server",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/faringen/IdeaProjects/primacy-tracker-shop",
-    "node.js.detected.package.jshint": "true",
-    "node.js.selected.package.jshint": "",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Explyt Spring.PharmacyClientApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Explyt Spring.PharmacyServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MedicineServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Code/IDEA Project/pharmacy_tracker_shop&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\IDEA Project\pharmacy_tracker_shop" />
       <recent name="$PROJECT_DIR$/pharmacy-server/src/main/resources" />
       <recent name="$PROJECT_DIR$/pharmacy-client/src/main/java/com/courcework/pharmacyclient/dto" />
     </key>
@@ -117,7 +122,7 @@
       <recent name="com.courcework.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MedicineServiceTest">
+  <component name="RunManager" selected="Explyt Spring.PharmacyClientApplication">
     <configuration name="MedicineServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pharmacy-server" />
       <extension name="coverage">
@@ -161,17 +166,17 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MedicineServiceTest" />
         <item itemvalue="Explyt Spring.PharmacyClientApplication" />
         <item itemvalue="Explyt Spring.PharmacyServerApplication" />
+        <item itemvalue="JUnit.MedicineServiceTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
       </set>
     </attachedChunks>
   </component>
@@ -183,6 +188,15 @@
       <option name="presentableId" value="Default" />
       <updated>1790706100895</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add documentation">
+      <option name="closed" value="true" />
+      <created>1794466205068</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1794466205068</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +228,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Alls sr234 c adda new stugg" />
     <MESSAGE value="Add new stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new stuff" />
+    <MESSAGE value="Add documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add documentation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -4,7 +4,6 @@
     -fx-background-color: #ffffff;
 }
 
-/* --- верхняя панель с поиском --- */
 .top-bar {
     -fx-background-color: #ffffff;
     -fx-border-color: #e0e0e0;
@@ -20,7 +19,6 @@
     -fx-font-size: 14px;
 }
 
-/* --- список препаратов слева --- */
 .list-view {
     -fx-background-color: #ffffff;
     -fx-border-color: #e0e0e0;
@@ -45,7 +43,6 @@
     -fx-background-color: #f1f8f0;
 }
 
-/* --- карточка препарата --- */
 .detail-pane {
     -fx-background-color: #fafafa;
 }
@@ -61,8 +58,6 @@
     -fx-text-fill: #666666;
 }
 
-/* --- вкладки --- */
-/* --- TabPane: плоский стиль вместо "папок" --- */
 .tab-pane {
     -fx-tab-min-height: 36px;
 }
@@ -103,7 +98,7 @@
     -fx-background-color: transparent;
     -fx-padding: 0;
 }
-/* --- убираем объёмную рамку/тень у TableView --- */
+
 .table-view {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
@@ -136,17 +131,18 @@
     -fx-font-size: 12px;
 }
 
-/* убирает стандартную тень/обводку фокуса вокруг TabPane */
+
 .tab-pane:focused, .tab:focused {
     -fx-background-insets: 0;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
-/* --- таблица цен --- */
 .table-view {
     -fx-background-color: transparent;
 }
+
+
 
 .table-view .column-header-background {
     -fx-background-color: transparent;
@@ -162,12 +158,24 @@
     -fx-aligment: center-left;
 }
 
+.table-row-cell:filled:min-price{
+    -fx-background-color: #e3f3e1;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:selected{
+    -fx-background-color: #dcdcdc
+}
+
+.table-row-cell:filled:selected .table-cell{
+    -fx-text-fill: #1a1a1a;
+}
+
 .placeholder-label{
     -fx-text-fill: #9a9a9a;
     -fx-font-size: 13px;
 }
 
-/* --- блок "итого" --- */
 .total-box {
     -fx-background-color: #f4f6f4;
     -fx-background-radius: 10;
@@ -188,7 +196,6 @@
     -fx-border-width: 1px;
 }
 
-/* --- тонкий скролл --- */
 .scroll-bar:vertical {
     -fx-background-color: transparent;
     -fx-pref-width: 8px;

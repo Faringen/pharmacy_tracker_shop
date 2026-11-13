@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -35,6 +36,7 @@ public class MainController {
     private HostServices hostServices;
 
     private final PharmacyApiClient apiClient = new PharmacyApiClient();
+    private static final PseudoClass MIN_PRICE = PseudoClass.getPseudoClass("min-price");
 
 
     private final Label medicinePlaceholder = new Label("Список препаратов пуст");
@@ -80,14 +82,12 @@ public class MainController {
             @Override
             protected void updateItem(PriceDTO item, boolean empty) {
                 super.updateItem(item, empty);
-                if(empty || item == null){
-                    setStyle("");
-                    return;
+                boolean isMin = false;
+                if(!empty && item != null){
+                    BigDecimal min = findMinPrice(priceTableView.getItems()).orElse(null);
+                    isMin = min != null && item.price().compareTo(min) == 0;
                 }
-                BigDecimal min = findMinPrice(priceTableView.getItems()).orElse(null);
-                if(min != null && item.price().compareTo(min)==0){
-                    setStyle("-fx-background-color: #e3f3e1; -fx-font-weight: bold;");
-                }else setStyle("");
+                pseudoClassStateChanged(MIN_PRICE, isMin);
             }
         });
 

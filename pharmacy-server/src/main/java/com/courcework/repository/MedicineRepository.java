@@ -11,18 +11,6 @@ import java.util.List;
 
 public interface MedicineRepository extends JpaRepository<Medicine, Long> {
 
-    
-    @Transactional
-    @Modifying
-    // Запрос для PostgreSQL / H2
-    @Query(value = "DELETE FROM medicine " +
-            "WHERE id NOT IN (" +
-            "    SELECT MIN(id) " +
-            "    FROM medicine " +
-            "    GROUP BY name" +
-            ")", nativeQuery = true)
-    void deleteDuplicateNames();
-
     List<Medicine> findByNameContaining(String name);
 
     List<Medicine> findByActiveSubstance(String activeSubstance, Long id);

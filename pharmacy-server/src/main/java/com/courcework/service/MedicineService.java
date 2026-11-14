@@ -38,7 +38,7 @@ public class MedicineService {
     public List<MedicineDTO> findAnalogs(Long id) {
         Medicine medicine = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Medicine not found: " + id));
-        return repository.findByActiveSubstance(medicine.getActiveSubstance(), id).stream()
+        return repository.findByActiveSubstanceIgnoreCase(medicine.getActiveSubstance(), id).stream()
                 .map(MedicineDTO::from).toList();
     }
 }

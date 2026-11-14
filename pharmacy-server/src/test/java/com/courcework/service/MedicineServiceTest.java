@@ -99,13 +99,13 @@ class MedicineServiceTest {
             Long id = 1L;
             String activeSubstance = "Active substance";
             when(repository.findById(1L)).thenReturn(Optional.of(medicine));
-            when(repository.findByActiveSubstance(activeSubstance, id)).thenReturn(List.of(medicine));
+            when(repository.findByActiveSubstanceIgnoreCase(activeSubstance, id)).thenReturn(List.of(medicine));
 
             List<MedicineDTO> result = service.findAnalogs(id);
 
             assertEquals(1, result.size());
             assertEquals(medicine.getName(), result.get(0).name());
-            verify(repository).findByActiveSubstance(activeSubstance, id);
+            verify(repository).findByActiveSubstanceIgnoreCase(activeSubstance, id);
         }
     }
 

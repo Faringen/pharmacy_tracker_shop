@@ -5,6 +5,7 @@ import com.courcework.pharmacyclient.api.error.*;
 import com.courcework.pharmacyclient.dto.MedicineDTO;
 import com.courcework.pharmacyclient.dto.PriceDTO;
 
+import com.courcework.pharmacyclient.utils.PriceUtils;
 import javafx.application.HostServices;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -95,7 +96,7 @@ public class MainController {
     }
 
     private Optional<BigDecimal> findMinPrice(List<PriceDTO> items) {
-        return items.stream().map(PriceDTO::price).min(Comparator.naturalOrder());
+        return PriceUtils.findMinPrice(items);
     }
 
     private void setupLists() {

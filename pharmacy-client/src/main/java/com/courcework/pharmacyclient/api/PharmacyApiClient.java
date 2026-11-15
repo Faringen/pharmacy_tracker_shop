@@ -8,7 +8,6 @@ import tools.jackson.databind.JavaType;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.lang.runtime.ObjectMethods;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
@@ -19,9 +18,20 @@ import java.time.Duration;
 import java.util.List;
 
 public class PharmacyApiClient {
-    private static final String URL = "http://localhost:8080/api";
-    private final HttpClient httpClient = HttpClient.newHttpClient();
+    private static final String DEFAULT_URL = "http://localhost:8080/api";
+
+    private final HttpClient httpClient;
+    private final String baseUrl;
     private final ObjectMapper mapper = new ObjectMapper();
+
+    public PharmacyApiClient() {
+        this(HttpClient.newHttpClient(), DEFAULT_URL);
+    }
+
+    public PharmacyApiClient(HttpClient httpClient, String baseUrl) {
+        this.httpClient = httpClient;
+        this.baseUrl = baseUrl;
+    }
 
     public List<MedicineDTO> getAllMeds(){
         return getList("/meds", MedicineDTO.class);
@@ -68,7 +78,7 @@ public class PharmacyApiClient {
         HttpResponse<String> response;
         try {
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(URL + path)).timeout(Duration.ofSeconds(5))
+                    .uri(URI.create(baseUrl + path)).timeout(Duration.ofSeconds(5))
                     .GET().build();
             response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         }catch (InterruptedException e){
@@ -79,7 +89,11 @@ public class PharmacyApiClient {
         }
 
         if(response.statusCode() >=400) throw new ApiException(response.statusCode(), extractMessage(response));
-        return mapper.readValue(response.body(), type);
+        try {
+            return mapper.readValue(response.body(), type);
+        } catch (RuntimeException e) {
+            throw new ApiException(response.statusCode(), "Некорректный ответ сервера");
+        }
     }
 
     private String extractMessage(HttpResponse<String> response) {
@@ -94,7 +108,7 @@ public class PharmacyApiClient {
 
     public boolean waitingForServer(int maxAttempts, long delayMillis) {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(URL + "/pharmacies"))
+                .uri(URI.create(baseUrl + "/pharmacies"))
                 .GET().build();
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
             try {
